@@ -21,7 +21,7 @@ export default function Contact() {
             umeralampklhr@gmail.com
           </a>
           <a
-            href="https://www.linkedin.com/in/muhammadumeralam"
+            href="https://www.linkedin.com/in/muhammad-umeralam/"
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-full border border-border px-6 py-3 font-mono text-[13px] text-text transition-colors hover:border-amber-dim hover:text-amber"
