@@ -1,7 +1,7 @@
 const groups = [
   {
     label: "backend",
-    items: ["Laravel", "PHP", "REST APIs", "OWASP Security"],
+    items: ["PHP", "Laravel", "RESTful APIs", "OWASP Security", "Role-Based Access Control"],
   },
   {
     label: "frontend",
@@ -9,11 +9,11 @@ const groups = [
   },
   {
     label: "data",
-    items: ["MySQL", "PostgreSQL", "MongoDB"],
+    items: ["MySQL", "PostgreSQL", "MongoDB", "Database Normalization"],
   },
   {
     label: "delivery",
-    items: ["CI/CD", "Git", "Automated Testing", "Vite"],
+    items: ["CI/CD Pipelines", "Git / GitHub", "Automated Testing", "Agile", "Vite"],
   },
 ];
 
@@ -26,13 +26,13 @@ export default function Stack() {
         </p>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {groups.map((g) => (
-            <div key={g.label}>
-              <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-amber">
+            <div key={g.label} className="group">
+              <p className="mb-3 font-mono text-[11px] uppercase tracking-wider text-amber transition-transform group-hover:translate-x-1">
                 {g.label}
               </p>
-              <ul className="space-y-1.5">
+              <ul className="space-y-1.5 border-l border-border/50 pl-3">
                 {g.items.map((item) => (
-                  <li key={item} className="text-sm text-text-muted">
+                  <li key={item} className="text-sm text-text-muted hover:text-text transition-colors">
                     {item}
                   </li>
                 ))}

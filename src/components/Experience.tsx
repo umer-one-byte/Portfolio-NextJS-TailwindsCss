@@ -6,19 +6,23 @@ const roles = [
     duration: "8 mo",
     points: [
       "Led end-to-end development with Next.js and Laravel, implementing SSR/SSG for ~40% faster loads and 90+ Lighthouse scores.",
-      "Drove ~55% organic session growth in 3 months through technical SEO and structured data.",
-      "Designed secure, normalized RESTful APIs supporting community wellness features.",
+      "Drove ~55% organic session growth in 3 months through technical SEO and structured data optimization.",
+      "Architected secure, normalized RESTful APIs to support high-volume community interactions and concurrent usage.",
+      "Optimized frontend performance with code-splitting, bundling, and caching strategies, lowering JavaScript payloads.",
+      "Introduced automated tests, CI/CD pipelines, and OWASP-aligned security measures to reduce incidents and rollbacks."
     ],
   },
   {
-    company: "Self-Employed (Freelance CRM)",
+    company: "Freelance (MRS-GROUP CRM)",
     title: "Full Stack Developer",
-    period: "Jan 2025 — Mar 2026",
+    period: "Jun 2025 — Mar 2026",
     duration: "1 yr 3 mo",
     points: [
       "Built and maintained core CRM modules — auth, lead/client management, notifications, integrations — with Laravel APIs and Nuxt.js.",
       "Shipped an automated commission engine with immutable payment records, cutting reconciliation time ~70% and eliminating billing disputes.",
-      "Engineered custom DataTables and multi-layered RBAC, cutting data-retrieval time ~30% with zero unauthorized-access incidents across 200+ daily users.",
+      "Engineered custom DataTables with dynamic column toggling, advanced search, and sorting, reducing data-retrieval time by ~30%.",
+      "Designed and implemented multi-layered role-based access controls (RBAC), resulting in zero unauthorized-access incidents.",
+      "Adopted industry-standard automated testing and code-review practices under mentorship to increase code quality."
     ],
   },
 ];
@@ -34,7 +38,7 @@ export default function Experience() {
           {roles.map((r) => (
             <div
               key={r.company}
-              className="grid gap-2 border-l border-border pl-6 sm:grid-cols-[180px_1fr] sm:gap-8"
+              className="grid gap-2 border-l border-border pl-6 sm:grid-cols-[180px_1fr] sm:gap-8 hover:border-amber-dim transition-colors"
             >
               <div>
                 <p className="font-mono text-[12px] text-amber">{r.period}</p>

@@ -52,7 +52,7 @@ export default function Hero() {
 
           <p className="mt-5 max-w-md text-[15px] leading-relaxed text-text-muted">
             I build systems that eliminate manual work and scale securely —
-            the parts most developers skip: hardened APIs, fast databases,
+            the parts most developers skip: hardened APIs, type-safe architecture, fast databases,
             and production infrastructure that holds up under real load.
           </p>
 
@@ -68,6 +68,14 @@ export default function Hero() {
               className="rounded-full border border-border px-5 py-2.5 font-mono text-[13px] text-text transition-colors hover:border-amber-dim hover:text-amber"
             >
               umeralampklhr@gmail.com
+            </a>
+            <a
+              href="https://github.com/umeralam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-border px-5 py-2.5 font-mono text-[13px] text-text transition-colors hover:border-amber-dim hover:text-amber"
+            >
+              GitHub ↗
             </a>
           </div>
 
