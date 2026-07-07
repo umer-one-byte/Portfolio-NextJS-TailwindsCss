@@ -30,11 +30,13 @@
   --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", "Cascadia Code", monospace;
 }
 
+/* Global Elements & Resets */
 * {
   border-color: var(--border);
 }
 
 html {
+  color-scheme: dark;
   scroll-behavior: smooth;
 }
 
@@ -42,13 +44,37 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss01" 1, "cv01" 1;
+  text-rendering: optimizeLegibility;
 }
 
+/* Selection state uses the amber neon accent motif */
 ::selection {
-  background: var(--amber);
-  color: #0a0e14;
+  background-color: var(--amber);
+  color: var(--bg);
 }
 
+/* Visible keyboard focus — brutalist square ring, no soft glow */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 3px;
+}
+
+/* Performance Optimized Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--panel);
+  border: 1px solid var(--border);
+}
+
+/* Custom UI Utilities */
 .bg-grid {
   background-image:
     linear-gradient(to right, rgba(255,255,255,0.025) 1px, transparent 1px),
@@ -60,20 +86,7 @@ body {
   text-shadow: 0 0 24px rgba(242,169,59,0.25);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-:focus-visible {
-  outline: 2px solid var(--amber);
-  outline-offset: 2px;
-}
-
+/* Keyframes & Animation Engineering */
 @keyframes pulse-dot {
   0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(62,207,142,0.5); }
   50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(62,207,142,0); }
@@ -88,4 +101,16 @@ body {
 }
 .animate-rise {
   animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Accessibility Guardrails */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
